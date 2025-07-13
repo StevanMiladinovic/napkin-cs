@@ -11,10 +11,290 @@ and to elaborate more on how they are interconnected.
 %that appeared in the frontmatter.
 %\input{tex/frontmatter/digraph}
 
-\section{Mathematical Foundations}
+\section{Mathematics}
 \begin{itemize}
   \pitch{part:foundations}
   This is the fundamental amount of mathematics required to understand
   anything in this book. Which is not a lot, really. It largely concerns
   basic set theory and the nature of logical statements.
+
+  \pitch{part:maths}
+  This contains all further mathematics you are likely to encounter over the
+  course of a computer science degree. Some of it (such as linear algebra) may
+  be extremely general and applicable to many different areas, some of it (such
+  as numerical analysis) may be essential to how computers work, other
+  parts (such as probability or number theory) may be specific to certain
+  applications only.
+\end{itemize}
+
+\section{Theory}
+\begin{itemize}
+  \pitch{part:theoretical}
+  This section concerns itself with what it means to
+  \emph{compute} anything at all, what a computer even is, in the theoretical
+  sense, what it can and --- perhaps more importantly --- \emph{cannot} compute.
+  In this, we treat computation not as a list of instructions or an interaction
+  of hardware components, but as a theoretical process that follows certain
+  formalisms and rules.
+
+  We begin with finite automata and their languages --- the regular expressions,
+  before moving on to context-free grammars and push-down automata and
+  finally into Turing machines, which model all of what a real computer
+  can do.
+
+  We will also delve into proofs
+  of the correctness of such machines, systems verification, formal process
+  algebra and more.
+
+  \pitch{part:dsa}
+  This is where we move away from the question of
+  \emph{whether} something can be computed and instead ask ourselves
+  \emph{how} and \emph{how well} it can be computed, as well as how to
+  actually do so in the most efficient way possible.
+
+  We begin with the basics of how data may be represented in memory, or in a more
+  abstract context, using various data structures.
+
+  Then we'll introduce algorithms to traverse, sort, search and manage these
+  structures, all while measuring how efficient various approaches and
+  algorithms are in terms of time and memory required.
+
+  We analyze why, how and in which context certain approaches are more efficient
+  than others and how you may perform such analysis on your own, for any
+  algorithm, theoretical or implemented.
+
+  \pitch{part:architecture}
+  At its core, a computer is really just an electronic machine, in which
+  electrons flow in a certain way to react to inputs and produce outputs
+  via their currents.
+
+  In this section, we concern ourselves with how to construct a CPU, how
+  memory is structured and accessed, and how performance is impacted by
+  both physical and logical design, as well as their interactions.
+
+  We will also briefly introduce machine language and assembly code,
+  and cover how digital files get loaded into the CPU and transformed into
+  physical effects, as well as how modern assembly techniques like pipelining
+  may improve performance.
+
+  In essence, this section covers the intersection of, and various means of
+  interfacing between hardware and software.
+
+  \pitch{part:quantum}
+  What happens when a computer operates by the laws of quantum physics?
+  Here, we shall journey into the strange world of quantum computation, where
+  bits may be zero or one\dots or something in between.
+  Where reading data may be a write-operation and all notions of
+  \emph{parallelism} fundamentally change meaning.
+
+  We begin by introducing the required physics --- just enough to understand
+  what \emph{superposition}, \emph{entanglement} and \emph{interference} are,
+  before building up the mathematics required to represent quantum states.
+
+  The core of this part of the book focuses on quantum circuits and how they
+  are used to model and design algorithms for quantum computers. We will solve
+  a number of conventionally \emph{hard} problems, such as prime factorization
+  (using Shor's algorithm) or searching (using Grover's algorithm) in a
+  radically more efficient manner than conventional computers would allow.
+\end{itemize}
+
+\section{Software Development}
+\begin{itemize}
+  \pitch{part:programming}
+  Programming is the primary tool used to \emph{make computers do things}.
+  In this chapter, we will cover the basics of what types of languages are used,
+  which paradigms they are used in and what styles we choose and why. Here, we
+  cover all aspects of programming from low-level to abstract.
+
+  We begin with imperative programming: variables, control-flow, loops, state
+  and mutation. Then we move on to object-oriented programming, and see how
+  encapsulation, inheritance and polymorphism affect larger software systems.
+
+  Beyond that, we will cover the functional programming paradigm, in which
+  code consists of pure functions, in the mathematical sense and side-effects
+  are avoided, as well as logic programming, where computation turns into a
+  matter of proof and constraint satisfaction.
+
+  We will finish this part with practical tips on how to learn the process of
+  programming itself, new programming languages and how to work in unfamiliar
+  paradigms, before giving a list of useful and educational practice problems
+  to learn or master a variety of subjects, from a programming language itself
+  to various highly theoretical or practical applications covered in this very
+  book.
+
+  \pitch{part:engineering}
+  Software engineering is all the parts of the development process of software
+  that \emph{aren't} programming. From designing software to meet requirements,
+  to planning the development of large projects and testing, maintaining and
+  managing existing software.
+
+  We begin with core design patterns, which serve as reusable solutions to
+  common architectural problems, then cover how to gather requirements,
+  write specifications, perform version control and coordinate changes safely
+  over time, even across large groups.
+
+  Testing and debugging will be a major theme: how do you ensure that software
+  does precisely what you want it to do, and keeps doing so as you extend it?
+  We will also cover agile methods, project management best-practices and DevOps
+  methodology --- covering deployment, monitoring and CI/CD.\@
+
+  \pitch{part:hci}
+  Good software should not just be functional, technically solving a problem.
+  It should also be intuitively usable. This part is about how to properly
+  design systems for human use, ensuring that our intended user base may
+  understand, control and benefit from the clever algorithms and programs we
+  come up with.
+
+  We begin with principles of usability and accessibility: how to create
+  interfaces that are clear, efficient and inclusive, before exploring visual
+  design, interaction modeling and feedback loops, using desktop, mobile and
+  web-interfaces as examples.
+
+  We also study how to evaluate an interface, process user-feedback and other
+  metrics, as well as how to perform proper user testing and iterative
+  refinement.
+\end{itemize}
+
+\section{Systems and Infrastructure}
+\begin{itemize}
+  \pitch{part:compilers}
+  We've heard about assembly at this point.
+  But how does high-level code, utilizing complex abstractions, turn into
+  byte-wise instructions for our CPU\@?
+
+  We begin with lexical analysis (turning text into abstract tokens),
+  parsing (representing the structure of a program), and intermediate
+  representations, before exploring various optimizations that compilers
+  employ to make code run faster without changing its meaning, and finally
+  to code-generation, in which assembly instructions are emitted for a processor
+  to physically execute.
+
+  We also delve into type systems that can catch errors before the code is ever
+  executed, and runtime systems that manage such things as memory, garbage
+  collection and function calls.
+
+  Building a compiler is a process that involves theory, algorithms and
+  low-level systems architecture. After reading this part of the book, you
+  should have understood a core part of every programming language, and perhaps
+  even be able to create your own.
+
+  \pitch{part:db}
+  As we store more data than could (or should) fit into a single data structure,
+  we need a database. This part of the book introduces the theory and practice
+  of managing, organizing, structuring and maintaining data at scale.
+
+  We begin with the concept of relational databases and SQL, the Standard Query
+  Language used to access and modify structured data. Then we will study how to
+  design schemas, normalize tables and use Entity-Relation diagrams to model
+  real-world domains.
+
+  Transactions, indexing and concurrency follow --- giving you the tools to
+  understand \emph{how} databases keep data consistent across failures, respond
+  quickly to any query and scale to several million users in the most extreme
+  cases.
+
+  Towards the end of this section, we then cover NoSQL models and how one may
+  structure data in other manners, as well as the motivation for doing so.
+
+  \pitch{part:os}
+  How does a CPU decide what to run? How are multiple processes running at once,
+  without interfering with each other? How is memory allocated without conflicts
+  and why can two programs seemingly access the same addresses?
+
+  Here, we answer those questions and more, by delving into the design of
+  operating systems. We will study the nature of processes and threads, CPU
+  and I/O scheduling, memory management, file systems and virtualization.
+
+  We will explore how operating systems enforce the boundaries between
+  processes while allowing for inter-process communication, and how they
+  optimize performance on modern hardware. We will also cover classic
+  problems like deadlocks, race-conditions and resource contention, as well
+  as how they are solved in theory and practice.
+
+  \pitch{part:distributed}
+  Not all computer processes run on a single machine.
+  This part shall cover those systems which run \emph{in parallel}, whether
+  that is on multiple processor cores, or across multiple physically separate
+  machines.
+
+  We begin by covering concurrency and multithreading: how one designs a program
+  that can do multiple things at once, safely. Then we move to distributed
+  algorithms and the concepts of consensus, fault-tolerance and coordination
+  across unreliable networks (which are all networks).
+
+  We study protocols like gossip and Paxos, as well as systems like MapReduce
+  and Spark, and explore modern architectures for compute clusters, cloud
+  computing and data processing at scale.
+
+  \pitch{part:networking}
+  Computers are more useful when connected to other computers.
+  Networking is how they are connected, and in this part of the book we will
+  cover how that works, from the physical signals traveling through wires up to
+  the final application.
+
+  We begin with the OSI model and TCP/IP protocol, laying out the architecture
+  of the internet. Then we look at how data is addressed, routed and
+  transmitted, and how sockets allow programs to communicate with one another.
+
+  We'll also cover common protocols (like HTTP, HTTPS, FTP, DNS), network
+  performance analysis and network-related security concerns and threats
+  and their mitigations.
+
+  \pitch{part:cybersec}
+  Once your computer connects to others --- or to an untrusted user --- security
+  is no longer optional. Here, we cover how systems may be attacked by a
+  malicious actor and how they may be defended against such attacks.
+
+  We begin by covering cryptography: how data is encrypted and signed and
+  identities are verified, before exploring authentication systems, common
+  vulnerabilities (like overflow and injection attacks), thread modeling and
+  security policies.
+
+  Later chapters will cover blockchains, secure communication protocols and the
+  human factors of digital security.
+\end{itemize}
+
+\section{Applications}
+\begin{itemize}
+  \pitch{part:ai}
+  How do computers learn from data, recognize patterns or reason about uncertain
+  scenarios? This part of the book shall introduce the tools and ideas behind
+  machine learning and AI\@.
+
+  We begin with statistical learning --- fitting models to given data --- and
+  proceed through classification, clustering and regression algorithms using
+  neural networks and random forests.
+
+  Towards the end of this part, we explore the theory behind large language
+  models and natural language processing, to see how modern generative AI
+  creates texts or summarizes documents.
+
+  \pitch{part:graphics}
+  How do you turn data into images? How do you simulate the appearance of light,
+  color and motion on a screen? In this section, we use computation to generate
+  and manipulate visual scenes.
+
+  We will cover the core rendering pipeline, from modeling geometry to
+  projecting a 2D or 3D scene onto a screen. We will introduce shaders,
+  ray-tracing and texture mapping, as well as covering human perception,
+  color theory and visual design.
+  In later chapters, we will touch on augmented and virtual reality.
+
+  \pitch{part:bioinformatics}
+  Life sciences --- meaning biology, chemistry and related fields --- have
+  become a data science of their own. In this part, we explore how computation
+  may help us model the properties of substances and the processes of their
+  interactions, as well as help us understand life itself.
+
+  We begin with sequence analysis: how to align DNA, determine similarity or
+  distance between two biological sequences, find motifs and compare individuals and
+  species based on their DNA\@.
+
+  We will then explore computer-based structure analysis and chemoinformatics,
+  in which computers may help design drugs, interpret experiments and uncover
+  the rules that govern complex chemical interactions.
+
+  Finally, we will cover computational systems biology, in which we use methods
+  of computer science to interpret large datasets regarding biological and
+  medical applications.
 \end{itemize}
