@@ -1,0 +1,84 @@
+\chapter{Mathematical Statements and Formal Logic}\label{ch:statements}
+\section{Definition of a Statement}
+
+\begin{definition}
+  A statement (in the mathematical or logical sense) can always be sensibly
+  assigned a truth value, namely ``true'' or ``false'' (also represented as 1/0,
+  or \(\top\)/\(\bot\)).
+  Statements the truth of which we have accepted by proof may be called
+  \emph{theorem}, \emph{lemma}, \emph{proposition} or \emph{corollary},
+  depending on their importance.
+  Statements which we assume to be true by definition alone are called
+  \emph{axioms}.
+\end{definition}
+
+\begin{example}
+  [Examples and counterexamples of mathematical statements]
+  \begin{itemize}
+    \leavevmode
+    \ii{} ``\(1+2=3\)'' is a true statement.
+    \ii{} ``Squares of natural numbers may be negative'' is a false statement
+          (but \emph{it is} a statement!).
+    \ii{} ``x+1=2'' only becomes a mathematical statement when we choose a
+          particular value of \(x\), or otherwise add something along the lines
+          of ``there exists a natural number x, such that''. On its own, it is
+          not a statement.
+   \ii{} ``This statement is false'' is not a mathematical statement at all,
+          since it can be neither true nor false.
+  \end{itemize}
+\end{example}
+
+\section{Logical Operations}
+Once we have constructed a logical statement, we may apply operations to it.
+Logical statements may be combined freely with these operators, always producing
+other logical statements. We define the following common operations by their
+truth tables:
+
+{ % Block for local table labeling
+\captionsetup[table]{labelformat=empty, hypcap=false}
+
+\begin{tcolorbox}[colframe=gray!80, colback=white, boxrule=0.4pt, top=4pt, bottom=4pt]
+  \begin{minipage}[t]{0.32\textwidth}
+    \centering
+    \vspace{-10pt} % reduce space above caption
+    \captionof{table}{Negation \(\neg\) \\(\emph{not})}
+    \vspace{3pt}  % add space between caption and table
+    \begin{tabular}{c|c}
+      \(A\) & \(\neg A\) \\
+      \hline
+      1 & 0 \\
+      0 & 1
+    \end{tabular}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{0.32\textwidth}
+    \centering
+    \vspace{-10pt}
+    \captionof{table}{Conjunction \(\land\) \\(\emph{and})}
+    \vspace{3pt}
+    \begin{tabular}{cc|c}
+      \(A\) & \(B\) & \(A \land B\)\\
+      \hline
+      1 & 1 & 1 \\
+      1 & 0 & 0 \\
+      0 & 1 & 0 \\
+      0 & 0 & 0 \\
+    \end{tabular}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{0.32\textwidth}
+    \centering
+    \vspace{-10pt}
+    \captionof{table}{Disjunction \(\lor\) \\(\emph{or})}
+    \vspace{3pt}
+    \begin{tabular}{cc|c}
+      \(A\) & \(B\) & \(A \land B\)\\
+      \hline
+      1 & 1 & 1 \\
+      1 & 0 & 1 \\
+      0 & 1 & 1 \\
+      0 & 0 & 0 \\
+    \end{tabular}
+  \end{minipage}
+\end{tcolorbox}
+}

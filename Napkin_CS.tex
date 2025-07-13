@@ -1,0 +1,273 @@
+\documentclass[11pt,twoside=semi,openright,numbers=noenddot,titlepage=false]{scrbook}
+\newcommand{\napkinversion}{v0.1.\hbox{\the\year\twodigits\month\twodigits\day}}
+
+\input{tex/preamble}
+\input{tex/macros}
+
+\title{An Infinitely Large Napkin}
+\subtitle{Computer Science Edition}
+\author{Stevan Miladinovic}
+\date{Version: \napkinversion}
+
+\begin{document}
+
+\frontmatter
+% \renewcommand{\thepage}{\arabic{page}}
+\maketitle
+
+\bgroup{}
+\fboxrule=4pt
+%\noindent\fbox{\includegraphics[width=\textwidth]{cover-art.jpg}}
+\egroup{}
+\newpage
+
+\include{tex/frontmatter/title-embellishments}
+% TODO: \include{tex/frontmatter/preface}
+
+\setcounter{chapter}{-1} % avoid sales pitch collision
+\include{tex/frontmatter/advice}
+
+% I DON'T want to reset the page number for mainmatter,
+% so save it to restore later
+\cleardoublepage{}
+\newcounter{temppage}
+\setcounter{temppage}{\value{page}}
+\mainmatter{}
+\setcounter{page}{\value{temppage}}
+
+\tableofcontents
+
+\Opensolutionfile{tex/backmatter/all-hints}
+\Opensolutionfile{tex/backmatter/all-solns}
+
+\part{Starting Out}\label{part:startout}
+\parttoc{}
+\setcounter{chapter}{-1} % sales pitch should be chapter 0
+\include{tex/frontmatter/salespitch}
+
+\part{Mathematical Foundations}\label{part:foundations}
+\include{tex/foundations/logic}
+% \include{tex/foundations/boolean_algebra}
+% \include{tex/foundations/proof_techniques}
+\include{tex/foundations/sets}
+% \include{tex/foundations/relations_functions}
+% \include{tex/foundations/number_theory}
+
+\part{Further Mathematics}\label{part:maths}
+\parttoc{}
+% \include{tex/maths/discrete_strutures}
+% \include{tex/maths/linalg}
+% (
+%  \part{Linear Algebra}\label{part:linalg}
+%  \parttoc{}
+%  \include{tex/linalg/vector-space}
+%  \include{tex/linalg/eigenvalues}
+%  \include{tex/linalg/dual-trace}
+%  \include{tex/linalg/dets}
+%  \include{tex/linalg/inner-form}
+%  \include{tex/linalg/fourier}
+%  \include{tex/linalg/transpose}
+% )
+% \include{tex/maths/numerical_analysis}
+% \include{tex/maths/calculus}
+% (
+%  \part{Calculus 101}\label{part:calc}
+%  \parttoc{}
+%  \include{tex/calculus/limits}
+%  \include{tex/calculus/p-adic}
+%  \include{tex/calculus/differentiate}
+%  \include{tex/calculus/taylor}
+%  \include{tex/calculus/integrate}
+% )
+% \include{tex/maths/combinatorics}
+% \include{tex/maths/prob_stats}
+% \include{tex/maths/number_theory}
+
+
+\part{The Theory of Computation}\label{part:theoretical}
+\parttoc{}
+% \include{tex/theory/dfa_nfa_regex}
+% \include{tex/theory/pda_cfg}
+% \include{tex/theory/turing_machines}
+% \include{tex/theory/decidability}
+% \include{tex/theory/complexity_classes}
+% \include{tex/theory/buechi_omega_languages}
+% \include{tex/theory/transistion_systems}
+% \include{tex/theory/kripke_structures}
+% \include{tex/theory/petri_nets}
+% \include{tex/theory/higher_nets}
+% \include{tex/theory/net_parallelism}
+% \include{tex/theory/systems_verification}
+% \include{tex/theory/temporal_logic}
+% \include{tex/theory/model_checking}
+% \include{tex/theory/process_algebra}
+
+
+\part{Data Structures and Algorithms}\label{part:dsa}
+\parttoc{}
+% \include{tex/dsa/basic_structures}
+% \include{tex/dsa/sorting}
+% \include{tex/dsa/searching}
+% \include{tex/dsa/advanced_strutures}
+% \include{tex/dsa/runtime_analysis}
+% \include{tex/dsa/paradigms_approaches}
+% \include{tex/dsa/graph_algorithms}
+
+
+\part{Quantum Computation}\label{part:quantum}
+\parttoc{}
+% \include{tex/quantum/phyics}
+% \include{tex/quantum/qbits_foundations}
+% \include{tex/quantum/vectors}
+% \include{tex/quantum/circuits}
+% \include{tex/quantum/shor}
+
+
+\part{Computer Architecture and Digital Logic}\label{part:architecture}
+\parttoc{}
+% \include{tex/architecture/gates_circuits}
+% \include{tex/architecture/alu_registers_cycles}
+% \include{tex/architecture/memory_hierarchy}
+% \include{tex/architecture/assembly}
+% \include{tex/architecture/pipelining_parallelism_performance}
+
+
+\part{Programming}\label{part:programming}
+\parttoc{}
+% \include{tex/programming/imperative}
+% \include{tex/programming/oop}
+% \include{tex/programming/functional}
+% \include{tex/programming/logic}
+% \include{tex/programming/learning}
+% \include{tex/programming/practice_problems}
+
+
+\part{Software Engineering}\label{part:engineering}
+\parttoc{}
+% \include{tex/engineering/design_patterns}
+% \include{tex/engineering/requirements_specifications}
+% \include{tex/engineering/vcs}
+% \include{tex/engineering/testing}
+% \include{tex/engineering/agile_swift}
+% \include{tex/engineering/project_management}
+% \include{tex/engineering/devops_deployment}
+
+
+\part{Human-Computer Interaction}\label{part:hci}
+\parttoc{}
+% \include{tex/hci/usability_accessibility}
+% \include{tex/hci/design_principles}
+% \include{tex/hci/testing_evaluation}
+
+
+\part{Compiler Architecture}\label{part:compilers}
+\parttoc{}
+% \include{tex/compilers/lexing}
+% \include{tex/compilers/parsing}
+% \include{tex/compilers/intermediate_repr}
+% \include{tex/compilers/optimization}
+% \include{tex/compilers/code_generation}
+% \include{tex/compilers/type_systems}
+% \include{tex/compilers/runtime_systems}
+
+
+\part{Databases}\label{part:db}
+\parttoc{}
+% \include{tex/db/reldb_sql}
+% \include{tex/db/normalization_er_diagrams}
+% \include{tex/db/transactions_acid}
+% \include{tex/db/indexing}
+% \include{tex/db/nosql}
+
+
+\part{Operating Systems}\label{part:os}
+\parttoc{}
+% \include{tex/os/processes_threads}
+% \include{tex/os/scheduling}
+% \include{tex/os/memory}
+% \include{tex/os/file_systems}
+% \include{tex/os/virtualization}
+% \include{tex/os/process_communication}
+
+
+\part{Parallel and Distributed Systems}\label{distributed}
+\parttoc{}
+% \include{tex/distributed/multithreading_concurrency}
+% \include{tex/distributed/distributed_algorithms_consensus}
+% \include{tex/distributed/consistency_fault_tolerance}
+% \include{tex/distributed/gossip_protocols}
+% \include{tex/distributed/clusters_clouds}
+% \include{tex/distributed/mapreduce_spark}
+
+
+\part{Networking}\label{part:networking}
+\parttoc{}
+% \include{tex/network/osi_}
+% \include{tex/network/tcp_ip}
+% \include{tex/network/sockets}
+% \include{tex/network/common_protocols}
+% \include{tex/network/routing_switching}
+% \include{tex/network/network_security}
+
+
+\part{Machine Learning and Artificial Intelligence}\label{part:ai}
+\parttoc{}
+% \include{tex/ai/statistical_learning}
+% \include{tex/ai/neural_networks}
+% \include{tex/ai/classification}
+% \include{tex/ai/clustering}
+% \include{tex/ai/regression}
+% \include{tex/ai/llms_nlp}
+
+
+\part{Cybersecurity}\label{part:cybersec}
+\parttoc{}
+% \include{tex/security/crypto}
+% \include{tex/security/auth}
+% \include{tex/security/vuln}
+% \include{tex/security/threat_modeling}
+% \include{tex/security/security_policies}
+% \include{tex/security/blockchains}
+
+
+\part{Computer Graphics}\label{part:graphics}
+\parttoc{}
+% \include{tex/graphics/rendering_pipelines}
+% \include{tex/graphics/shaders}
+% \include{tex/graphics/ray_tracing}
+% \include{tex/graphics/human_perception}
+% \include{tex/grpahics/ar_vr}
+
+
+\part{Bioinformatics}\label{part:bioinformatics}
+\parttoc{}
+% \include{tex/bio/sequence_analysis}
+% \include{tex/bio/structure_analysis}
+% \include{tex/bio/chemoinformatics}
+% \include{tex/bio/csb}
+
+
+
+\part{Appendix}
+\parttoc{}
+\appendix
+% \automark{chapter} % change to chapter in appendix
+
+\Closesolutionfile{tex/backmatter/all-hints}
+\Closesolutionfile{tex/backmatter/all-solns}
+\include{tex/backmatter/references}
+\include{tex/backmatter/hintsol}
+
+% TODO:
+%\include{tex/backmatter/notation}
+
+%\include{tex/backmatter/sets-functions}
+
+\backmatter{}
+
+%% References
+\clearpage
+\printbibliography[type=image,title={Image Attributions}]
+\printbibliography[nottype=image]
+
+\end{document}
