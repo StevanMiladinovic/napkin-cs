@@ -3,8 +3,7 @@
 
 \begin{definition}
   A statement (in the mathematical or logical sense) can always be sensibly
-  assigned a truth value, namely ``true'' or ``false'' (also represented as 1/0,
-  or \(\top\)/\(\bot\)).
+  assigned a truth value, namely ``true'' or ``false'' (also represented as 1/0).
   Statements the truth of which we have accepted by proof may be called
   \emph{theorem}, \emph{lemma}, \emph{proposition} or \emph{corollary},
   depending on their importance.
@@ -139,10 +138,22 @@ same statement put in different terms.
 A less common form of notation is \(A \Leftarrow B\) which simply reads as
 \emph{if B then A} and is equivalent to \(B \Rightarrow A\).
 
+\section{Tautologies}
+
+We can, using these methods, construct statements that are always true.
+A simple example of this might be \(A \lor \neg A\) or \(A \Rightarrow A\),
+where \(A\) is any statement. Similarly, we may also construct statements that
+must always be false, such as \(A \land A\) or \(A \Leftrightarrow \neg A\).
+
+We call statements that are always true by nature \emph{tautologies} and
+those that are always false \emph{contradictions}. They are denoted by the
+symbols \(\top\) and \(\bot\), respectively.
+
 \subsection{Compound Statements}
 We may freely combine logical statements using any of these operations, always
 creating new logical statements at each step. For instance,
 \begin{example}
+  [Compound statements]
   \((A \lor B) \Rightarrow C\)
   \hfill
   \((A \land B) \Leftrightarrow C\)
@@ -158,7 +169,7 @@ I have used parentheses to clarify the intended order of operations here, which
 is often done for simplicity. However, just like with arithmetic operations
 (\(+, -, \times, \div\)), precedence rules still exist:
 \begin{itemize}
-  \ii{} Negation \(\neg\) binds most tightly, followed by
+  \ii{} Negation \(\neg\) is evaluated first, followed by
   \ii{} Conjunction \(\land\)
   \ii{} Disjunction \(\lor\)
   \ii{} Implication \(\Rightarrow\) and
@@ -166,6 +177,7 @@ is often done for simplicity. However, just like with arithmetic operations
 \end{itemize}
 
 \begin{example}
+  [Signifying the precedence of logical operators]
   Consider the compound logical statement:\\
   \begin{center}
     \(\neg A \lor A \land B\)
@@ -175,3 +187,132 @@ is often done for simplicity. However, just like with arithmetic operations
   This is correctly evaluated by first negating \(A\), then evaluating
   \(B \land C\), then the logical or combining both.
 \end{example}
+
+\section{\problemhead}
+\begin{problem}
+  [Statements]
+  Which of the following are \emph{mathematical statements}?
+  \begin{enumerate}
+    \ii{\(3+5=8\)}
+    \ii{\(12-2=15\)}
+    \ii{\(x+3=10\)}
+    \ii{Let \(x\) be an integer.}
+    \ii{There exists a prime number greater than \(1000\).}
+    \ii{This sentence is false.}
+    \ii{Every even number greater than \(2\) is the sum of two primes.}
+  \end{enumerate}
+
+  \begin{hint}
+    Any mathematical statement must be either definitely true or definitely
+    false. But you don't necessarily have to \emph{know} whether it is true or
+    false. There exist statements the truth of which is yet to be discovered.
+  \end{hint}
+
+  \begin{sol}
+  \begin{enumerate}
+    \ii{\(3+5=8\)} We know for a fact that this is true. So it is a statement.
+    \ii{\(12-2=15\)} We know for a fact that this is false. So it is a statement.
+    \ii{\(x+3=10\)} This is not a fully specified statement. It may be true or
+          false, depending on the value of \(x\). On its own, it is not a statement.
+    \ii{Let \(x\) be an integer.} This is a declaration or an instruction. Not a
+          statement in the mathematical sense. It has no truth value associated
+          with it.
+    \ii{There exists a prime number greater than \(1000\).} This is true. So it
+          is a statement.
+    \ii{This sentence is false.} This sentence is paradoxical. It cannot be
+          true, nor can it be false. Hence, it is not a valid statement.
+    \ii{Every even number greater than \(2\) is the sum of two primes.}
+          This is a statement. We do not know if it is true (it's a famous
+          unsolved problem, in fact!), but we know for a fact that it must be
+          either true or false. So it satisfies the definition of what a
+          statement is.
+  \end{enumerate}
+  \end{sol}
+\end{problem}
+
+\begin{problem}
+  [Truth tables]
+  Construct the truth-table for the following statement:\\
+  \begin{center}
+    \(A \Rightarrow (B \lor \neg C)\)
+  \end{center}
+
+  \begin{hint}
+    First compute the truth tables for the intermediate values of \(\neg C\) and
+    \(B \lor \neg C\).
+  \end{hint}
+
+  \begin{sol}
+    \begin{tabular}{ccc|cc|c}
+      \(A\) & \(B\) & \(C\) & \(\neg C\) & \(B \lor \neg C\) &
+      \(A \Rightarrow (B \lor \neg C)\)\\
+      \hline
+      0 & 0 & 0 & 1 & 1 & 1\\
+      0 & 0 & 1 & 0 & 0 & 1\\
+      0 & 1 & 0 & 1 & 1 & 1\\
+      0 & 1 & 1 & 0 & 1 & 1\\
+      1 & 0 & 0 & 1 & 1 & 1\\
+      1 & 0 & 1 & 0 & 0 & 0\\
+      1 & 1 & 0 & 1 & 1 & 1\\
+      1 & 1 & 1 & 0 & 1 & 1\\
+    \end{tabular}
+  \end{sol}
+\end{problem}
+
+\begin{problem}
+  [Logical Operator Precedence]
+  Using parentheses, make the order of operations explicit, without changing the
+  meaning of the statement.\\
+  \(\neg A \lor B \land C \Rightarrow D\)
+
+  \begin{hint}
+    \begin{itemize}
+      \ii{} Negation \(\neg\) is evaluated first, followed by
+      \ii{} Conjunction \(\land\)
+      \ii{} Disjunction \(\lor\)
+      \ii{} Implication \(\Rightarrow\) and
+      \ii{} Equivalence \(\Leftrightarrow\)
+    \end{itemize}
+  \end{hint}
+
+  \begin{sol}
+    \(((\neg A) \lor (B \land C)) \Rightarrow D\)
+  \end{sol}
+\end{problem}
+
+\begin{problem}
+  [Logically Evaluating Statements]
+  Let \(A=0, B=1\). Evaluate the following statement:\\
+  \begin{center}
+    \((\neg A \lor B) \Leftrightarrow (B \land \top)\)
+  \end{center}
+
+  \begin{hint}
+    Evaluate both sides of the equivalence first, then apply the equivalence relation.
+  \end{hint}
+
+  \begin{sol}
+    \begin{align*}
+      (\neg A \lor B) &\Leftrightarrow (B \land \top)\\
+      (\neg 0 \lor 1) &\Leftrightarrow (1 \land 1)\\
+      (1 \lor 1) &\Leftrightarrow (1)\\
+      1 &\Leftrightarrow 1\\
+      1
+    \end{align*}
+  \end{sol}
+\end{problem}
+
+\begin{problem}
+  [Tautology and Contradiction]
+  Is the following statement a tautology, a contradiction or neither?
+  Can any statement be both?\\
+  \((A \Rightarrow B) \Leftrightarrow (\neg A \lor B)\)
+
+  \begin{sol}
+    The statement is a tautology. It expresses a common logical identity, namely
+    that \(A \Rightarrow B\) is the same statement as \(\neg A \lor B\).\\
+    No statement can be both tautology and contradiction, since that would
+    require it to be true and false simultaneously. This would contradict our
+    definition of what a logical statement is.
+  \end{sol}
+\end{problem}

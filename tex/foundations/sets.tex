@@ -6,6 +6,7 @@
   separated from the others by a comma.
 \end{definition}
 \begin{example}
+  [A set]
   For example: \(A = \{1, 2, 3\}\) is the set
   containing the numbers one, two and three.
 \end{example}
@@ -13,7 +14,7 @@
 \section{Key Properties}
 \begin{itemize}
   \ii{\textbf{Unordered:}} sets are unordered. That is, \(\{1,2,3\}=\{3,2,1\}\),
-  because they contain the exact same elements, only in a different order.
+  because they contain the same elements, only in a different order.
   \ii{\textbf{No duplicates:}} sets only contain each element at most once.
   That is, \(\{1,2,3\}=\{1,2,2,3,3,3\}\), because they contain the same
   elements, only differing in \emph{how often} they occur.
@@ -34,10 +35,10 @@ There exists a set that has no elements at all. It is called \emph{the empty
 whereas \(x \notin \emptyset\) is true for every object \(x\).
 
 \section{Describing Sets}
-Sets may be described in a number of different ways.
+Sets may be described in a number of ways.
 The simplest method --- which we have used thus far --- is by simply listing out
 all elements within the set.
-However, this is only convenient for very small, and only possible at all for
+However, this is only convenient for small, and only possible at all for
 \emph{finite} sets.
 Infinite sets exist, however, and must be described using different means.
 Consider, for instance, the set \(\mathbb{N}_{0} = \{0,1,2,3,4,5,\dots\}\),
@@ -53,7 +54,41 @@ Sets are central to virtually all branches of mathematics and theoretical
 computer science. They provide the language in which most other concepts are
 defined and formalized.
 
+We note at this point, that not every \emph{description} of a set creates
+another valid set: consider for instance \(\{A \mid A \notin A\}\), or \emph{the
+set of all sets that do not contain themselves}. Such a set cannot exist, as its
+construction inevitably leads to a paradox.
+
 \section{Subsets and Powersets}
+
+Let \(A, B\) be sets. Then \(A\) is called a \emph{subset} of \(B\) if and only if
+every element of \(A\) is also in \(B\). We express this by the notation
+\(A \subseteq B\). We further introduce the notation \(A \subsetneq B\) to mean
+\((A \subseteq B) \land (A \neq B)\). In this case, \(A\) is called a \emph{proper
+  subset} of \(B\).
+
+We may equivalently state that \(B\) is a \emph{superset} of \(A\), and express
+this as \(B \supseteq A\), or \(B \supsetneq A\) if they are not equal.
+
+\begin{example}
+  [Subsets, supersets]
+  \begin{itemize}
+    \leavevmode
+    \ii{The empty set is a subset of every set}:
+          \(\emptyset \subseteq A\) for every set \(A\)
+    \ii{Every non-empty set is a \emph{proper superset} of the empty set}:
+          \(A \supsetneq \emptyset\) for every set \(A, A\neq\emptyset\)
+    \ii{} \(\{1,2,3\} \subseteq \{1,2,3,4,5\}\)
+    \ii{} \(a \in A \Leftrightarrow \{a\} \subseteq A\)
+  \end{itemize}
+\end{example}
+
+If \(A\) is a set, then the set of all subsets of \(A\) is called its
+\emph{powerset} \(\PP(A)\).
+
+\section{Quantifiers}
+
+\section{Set Operations}
 
 \section{Commonly Used Sets}
 Commonly used sets include:
