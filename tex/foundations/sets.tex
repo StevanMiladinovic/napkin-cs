@@ -1,22 +1,76 @@
 \chapter{Sets}\label{ch:sets}
 \section{Definition}
 \begin{definition}
-  A set is a collection of elements that does not care about their order or
-  multiplicity. We write sets surrounded by curly braces, with each element
+  A set is an unordered collection of distinct objects.
+  We write sets surrounded by curly braces, with each element
   separated from the others by a comma.
 \end{definition}
 \begin{example}
-  For example: \(\{1, 2, 3\}\) is the set
-  containing the natural numbers one, two and three. It is equal to
-  \(\{3,2,1\}\) and to \(\{1,2,2,3,3,3\}\), since they each contain exactly the
-  same elements, only in a different order or multiplicity.
+  For example: \(A = \{1, 2, 3\}\) is the set
+  containing the numbers one, two and three.
 \end{example}
 
-The set \(\NN\) is sometimes understood to include \(0\), sometimes understood
-to not include it. This ambiguity is annoying.
-In this book, I shall always explicitly use \(\NN_{0}\) to denote the set of
-natural numbers \emph{including} zero and \(\NN^{*}\) to denote the set of
-natural numbers \emph{without} zero.
+\section{Key Properties}
+\begin{itemize}
+  \ii{\textbf{Unordered:}} sets are unordered. That is, \(\{1,2,3\}=\{3,2,1\}\),
+  because they contain the exact same elements, only in a different order.
+  \ii{\textbf{No duplicates:}} sets only contain each element at most once.
+  That is, \(\{1,2,3\}=\{1,2,2,3,3,3\}\), because they contain the same
+  elements, only differing in \emph{how often} they occur.
+\end{itemize}
+
+\section{Membership}
+A set may \emph{contain elements}.
+To express that a given element \(x\) is contained within a set \(A\),
+we write \(x \in A\). To express that an element \(y\) is \emph{not} contained
+within a set \(A\), we write \(y \notin A\).
+
+Two sets \(A, B\) are considered equal, precisely when
+\((x \in A) \Leftrightarrow (x \in B)\) for all objects \(x\).
+
+There exists a set that has no elements at all. It is called \emph{the empty
+  set} and usually denoted as \(\emptyset\).
+\(x \in \emptyset\) is a false statement for every possible object \(x\),
+whereas \(x \notin \emptyset\) is true for every object \(x\).
+
+\section{Describing Sets}
+Sets may be described in a number of different ways.
+The simplest method --- which we have used thus far --- is by simply listing out
+all elements within the set.
+However, this is only convenient for very small, and only possible at all for
+\emph{finite} sets.
+Infinite sets exist, however, and must be described using different means.
+Consider, for instance, the set \(\mathbb{N}_{0} = \{0,1,2,3,4,5,\dots\}\),
+which contains all \emph{natural numbers}, starting at zero.
+From this, we may construct further sets, such as
+\(\mathbb{Z} = \{x-y \mid x, y \in \mathbb{N}_0\}\), which is the set of all
+\emph{integers}.
+From these, we can then further construct the set
+\(\mathbb{Q} = \{\frac{x}{y} \mid x,y \in \mathbb{Z}, y \neq 0\}\) of all
+\emph{rational numbers}.
+
+Sets are central to virtually all branches of mathematics and theoretical
+computer science. They provide the language in which most other concepts are
+defined and formalized.
+
+\section{Subsets and Powersets}
+
+\section{Commonly Used Sets}
+Commonly used sets include:
+\begin{itemize}
+  \ii{\(\mathbb{N}\):} The set of all \emph{natural numbers}
+\begin{remark}
+  The set \(\NN\) is sometimes understood to include \(0\), sometimes understood
+  to not include it. This ambiguity is annoying.
+  In this book, I shall always explicitly use \(\NN_{0}\) to denote the set of
+  natural numbers \emph{including} zero and \(\NN^{*}\) to denote the set of
+  natural numbers \emph{without} zero.
+\end{remark}
+  \ii{\(\mathbb{Z}\):} The set of all \emph{integers}
+  \ii{\(\mathbb{Q}\):} The set of all \emph{rational numbers}
+  \ii{\(\mathbb{R}\):} The set of all \emph{real numbers}
+  \ii{\(\mathbb{C}\):} The set of all \emph{complex numbers}
+\end{itemize}
 
 \section{\problemhead}
 \begin{problem}
