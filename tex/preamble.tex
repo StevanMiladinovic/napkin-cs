@@ -54,7 +54,13 @@
 
 %%fakesection Commutative diagrams
 \usepackage{tikz-cd}
-\usetikzlibrary{arrows,arrows.meta}
+\usetikzlibrary{automata,positioning,arrows,arrows.meta}
+\tikzset{
+  ->, >=Stealth,
+  node distance=2.5cm,
+  every state/.style={thick, fill=blue!10},
+  initial text={},
+}
 % make a larger hook
 % https://tex.stackexchange.com/questions/514451/how-to-define-a-new-hooked-arrow
 \makeatletter
