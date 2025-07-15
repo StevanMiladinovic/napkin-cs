@@ -138,17 +138,6 @@ same statement put in different terms.
 A less common form of notation is \(A \Leftarrow B\) which simply reads as
 \emph{if B then A} and is equivalent to \(B \Rightarrow A\).
 
-\section{Tautologies}
-
-We can, using these methods, construct statements that are always true.
-A simple example of this might be \(A \lor \neg A\) or \(A \Rightarrow A\),
-where \(A\) is any statement. Similarly, we may also construct statements that
-must always be false, such as \(A \land A\) or \(A \Leftrightarrow \neg A\).
-
-We call statements that are always true by nature \emph{tautologies} and
-those that are always false \emph{contradictions}. They are denoted by the
-symbols \(\top\) and \(\bot\), respectively.
-
 \subsection{Compound Statements}
 We may freely combine logical statements using any of these operations, always
 creating new logical statements at each step. For instance,
@@ -188,6 +177,19 @@ is often done for simplicity. However, just like with arithmetic operations
   \(B \land C\), then the logical or combining both.
 \end{example}
 
+\section{Tautologies}
+
+We can, using these methods, construct statements that are always true.
+A simple example of this might be \(A \lor \neg A\) or \(A \Rightarrow A\),
+where \(A\) is any statement. Similarly, we may also construct statements that
+must always be false, such as \(A \land \neg A\) or \(A \Leftrightarrow \neg A\).
+
+We call statements that are always true by nature \emph{tautologies} and
+those that are always false \emph{contradictions}. They are denoted by the
+symbols \(\top\) and \(\bot\), respectively.
+
+
+% TODO: Most of these should probably be questions or exercises, not problems.
 \section{\problemhead}
 \begin{problem}
   [Statements]
@@ -297,7 +299,7 @@ is often done for simplicity. However, just like with arithmetic operations
       (\neg 0 \lor 1) &\Leftrightarrow (1 \land 1)\\
       (1 \lor 1) &\Leftrightarrow (1)\\
       1 &\Leftrightarrow 1\\
-      1
+      &\ \, 1
     \end{align*}
   \end{sol}
 \end{problem}

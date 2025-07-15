@@ -34,31 +34,6 @@ There exists a set that has no elements at all. It is called \emph{the empty
 \(x \in \emptyset\) is a false statement for every possible object \(x\),
 whereas \(x \notin \emptyset\) is true for every object \(x\).
 
-\section{Describing Sets}
-Sets may be described in a number of ways.
-The simplest method --- which we have used thus far --- is by simply listing out
-all elements within the set.
-However, this is only convenient for small, and only possible at all for
-\emph{finite} sets.
-Infinite sets exist, however, and must be described using different means.
-Consider, for instance, the set \(\mathbb{N}_{0} = \{0,1,2,3,4,5,\dots\}\),
-which contains all \emph{natural numbers}, starting at zero.
-From this, we may construct further sets, such as
-\(\mathbb{Z} = \{x-y \mid x, y \in \mathbb{N}_0\}\), which is the set of all
-\emph{integers}.
-From these, we can then further construct the set
-\(\mathbb{Q} = \{\frac{x}{y} \mid x,y \in \mathbb{Z}, y \neq 0\}\) of all
-\emph{rational numbers}.
-
-Sets are central to virtually all branches of mathematics and theoretical
-computer science. They provide the language in which most other concepts are
-defined and formalized.
-
-We note at this point, that not every \emph{description} of a set creates
-another valid set: consider for instance \(\{A \mid A \notin A\}\), or \emph{the
-set of all sets that do not contain themselves}. Such a set cannot exist, as its
-construction inevitably leads to a paradox.
-
 \section{Subsets and Powersets}
 
 Let \(A, B\) be sets. Then \(A\) is called a \emph{subset} of \(B\) if and only if
@@ -70,6 +45,9 @@ every element of \(A\) is also in \(B\). We express this by the notation
 We may equivalently state that \(B\) is a \emph{superset} of \(A\), and express
 this as \(B \supseteq A\), or \(B \supsetneq A\) if they are not equal.
 
+If \(A\) is a set, then the set of all subsets of \(A\) is called its
+\emph{powerset} \(\PP(A)\).
+
 \begin{example}
   [Subsets, supersets]
   \begin{itemize}
@@ -77,23 +55,59 @@ this as \(B \supseteq A\), or \(B \supsetneq A\) if they are not equal.
     \ii{The empty set is a subset of every set}:
           \(\emptyset \subseteq A\) for every set \(A\)
     \ii{Every non-empty set is a \emph{proper superset} of the empty set}:
-          \(A \supsetneq \emptyset\) for every set \(A, A\neq\emptyset\)
+          \(A \supsetneq \emptyset\) for every set \(A, A \neq \emptyset\)
     \ii{} \(\{1,2,3\} \subseteq \{1,2,3,4,5\}\)
-    \ii{} \(a \in A \Leftrightarrow \{a\} \subseteq A\)
+    \ii{} \(a \in A \Leftrightarrow \{a\} \subseteq A\), though the set containing an object \emph{is a
+          different thing than the object itself}
+    \ii{} if \(A = \{1,2,3\}\), then
+          \(\PP(A) = \{\emptyset, \{1\}, \{2\}, \{3\}, \{1,2\}, \{1,3\}, \{2,3\}, \{1,2,3\}\}\)
   \end{itemize}
 \end{example}
 
-If \(A\) is a set, then the set of all subsets of \(A\) is called its
-\emph{powerset} \(\PP(A)\).
-
 \section{Quantifiers}
+
+\section{Describing Sets}
+Sets may be described in a number of ways.
+The simplest method --- which we have used thus far --- is by simply listing out
+all elements within the set.
+However, this is only convenient for small, and only possible at all for
+\emph{finite} sets.
+Infinite sets exist, however, and must be described using different means.
+Consider, for instance, the set \(\NN_{0} = \{0,1,2,3,4,5,\dots\}\),
+which contains all \emph{natural numbers}, starting at zero.
+From this, we may construct further sets, such as
+\(\ZZ = \{x-y \mid x, y \in \NN_0\}\), which is the set of all
+\emph{integers}.
+\begin{remark}
+  This notation reads as ``Let \(\ZZ\) be the set containing all differences
+  x-y, where x and y are natural numbers'', or more concisely ``Let \(\ZZ\)
+  be the set of all possible differences of natural numbers''. It still includes
+  all natural numbers, since \(x - 0 \in \ZZ \forall x \in \NN_0\), so we may
+  note that \(\NN_0 \subseteq \ZZ\), but it also contains negative integers, since \(0 - x\)
+  is similarly contained.
+  So we may note that \(\NN_0 \subseteq \ZZ\).
+\end{remark}
+
+From these, we can then further construct the set
+\(\QQ = \{\frac{x}{y} \mid x,y \in \ZZ, y \neq 0\}\) of all
+\emph{rational numbers}.
+
+Sets are central to virtually all branches of mathematics and theoretical
+computer science. They provide the language in which most other concepts are
+defined and formalized.
+
+We note at this point, that not every \emph{description} of a set creates
+another valid set: consider for instance \(\{A \mid A \notin A\}\), or \emph{the
+set of all sets that do not contain themselves}. Such a set cannot exist, as its
+construction inevitably leads to a paradox: should it contain itself?
 
 \section{Set Operations}
 
 \section{Commonly Used Sets}
 Commonly used sets include:
 \begin{itemize}
-  \ii{\(\mathbb{N}\):} The set of all \emph{natural numbers}
+  \ii{\(\NN\):} The set of all \emph{natural numbers}, meaning all the positive integers
+        you'd use to count things.
 \begin{remark}
   The set \(\NN\) is sometimes understood to include \(0\), sometimes understood
   to not include it. This ambiguity is annoying.
@@ -101,11 +115,18 @@ Commonly used sets include:
   natural numbers \emph{including} zero and \(\NN^{*}\) to denote the set of
   natural numbers \emph{without} zero.
 \end{remark}
-  \ii{\(\mathbb{Z}\):} The set of all \emph{integers}
-  \ii{\(\mathbb{Q}\):} The set of all \emph{rational numbers}
-  \ii{\(\mathbb{R}\):} The set of all \emph{real numbers}
-  \ii{\(\mathbb{C}\):} The set of all \emph{complex numbers}
+  \ii{\(\ZZ\):} The set of all \emph{integers}, including the negative integers.
+  \ii{\(\QQ\)} The set of all \emph{rational numbers}, which are the ratios of integers,
+        ie.\ fractions.
+  \ii{\(\RR\):} The set of all \emph{real numbers}, including all those that cannot be
+        expressed as fractions, such as \(\sqrt{2}, \pi\) or \(e\)
+  \ii{\(\CC\)} The set of all \emph{complex numbers}
 \end{itemize}
+
+Each of these sets is also a \emph{proper subset} of the next, that is
+\begin{align*}
+  \NN \subsetneq \ZZ \subsetneq \QQ \subsetneq \RR \subsetneq \CC
+\end{align*}
 
 \section{\problemhead}
 \begin{problem}
