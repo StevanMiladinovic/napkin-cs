@@ -125,7 +125,6 @@ operations
     \end{tabular}
   \end{minipage}
 \end{tcolorbox}
-}
 
 Which are often used to express the flow of formal proofs.
 \(A \Rightarrow B\) reads as \emph{if A then B}. Meaning that if statement \(A\)
@@ -137,6 +136,28 @@ same statement put in different terms.
 
 A less common form of notation is \(A \Leftarrow B\) which simply reads as
 \emph{if B then A} and is equivalent to \(B \Rightarrow A\).
+
+Finally, there is the operation on which most low-level computer operations are
+based:
+
+\begin{tcolorbox}[colframe=gray!80, colback=white, boxrule=0.4pt, top=4pt, bottom=4pt]
+  \begin{minipage}[t]{\textwidth}
+    \centering
+    \vspace{-10pt}
+    \captionof{table}{Exclusive or \(\xor\) \\(\emph{either A or B})}
+    \vspace{3pt}
+    \begin{tabular}{cc|c}
+      \(A\) & \(B\) & \(A \xor B\)\\
+      \hline
+      0 & 0 & 0 \\
+      0 & 1 & 1 \\
+      1 & 0 & 1 \\
+      1 & 1 & 0 \\
+    \end{tabular}
+  \end{minipage}
+\end{tcolorbox}
+}
+
 
 \subsection{Compound Statements}
 We may freely combine logical statements using any of these operations, always
@@ -306,13 +327,15 @@ symbols \(\top\) and \(\bot\), respectively.
 
 \begin{problem}
   [Tautology and Contradiction]
-  Is the following statement a tautology, a contradiction or neither?
+  Are the following statements a tautology, a contradiction or neither?
   Can any statement be both?\\
-  \((A \Rightarrow B) \Leftrightarrow (\neg A \lor B)\)
+  \((A \Rightarrow B) \Leftrightarrow (\neg A \lor B)\)\\
+  \((A \xor B) \Leftrightarrow \neg (A \Leftrightarrow B)\)
 
   \begin{sol}
-    The statement is a tautology. It expresses a common logical identity, namely
-    that \(A \Rightarrow B\) is the same statement as \(\neg A \lor B\).\\
+    The statements are tautologies. They expresses common logical identities, namely
+    that \(A \Rightarrow B\) is the same statement as \(\neg A \lor B\)
+    and \(A \xor B\) is the exact opposite statement as \(A \Leftrightarrow B\).\\
     No statement can be both tautology and contradiction, since that would
     require it to be true and false simultaneously. This would contradict our
     definition of what a logical statement is.

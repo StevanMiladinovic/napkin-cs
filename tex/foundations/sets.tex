@@ -66,6 +66,38 @@ If \(A\) is a set, then the set of all subsets of \(A\) is called its
 
 \section{Quantifiers}
 
+Often times, we would want to express a statement that holds \emph{for every
+  element} of a set, or at least for \emph{some elements}.
+Or perhaps, we might want to state that a statement is true only for
+ \emph{exactly one element} within a set. That's what quantifiers do.
+
+\begin{tcolorbox}[colframe=gray!80, colback=white, boxrule=0.4pt, top=4pt, bottom=4pt]
+  \begin{minipage}[t]{\textwidth}
+    \centering
+    \vspace{-10pt}
+    \captionof{table}{Logical Quantifiers}
+    \vspace{3pt}
+    \begin{tabular}{cc}
+      \(\forall\) & ``for all''\\
+      \(\exists\) & ``there exists at least one (but possibly many)''\\
+      \(\exists!\) & ``there exists \emph{exactly} one''
+    \end{tabular}
+  \end{minipage}
+\end{tcolorbox}
+
+ \begin{example}
+   [Quantifiers]
+ Consider, for instance, the statement: \emph{``Every natural number --- including
+ zero ---  may be expressed as the sum of two natural numbers''}.
+
+We would express this using the following notation:
+\begin{center}
+  \(\forall x \in \NN_0 : x = y + z \qquad y,z\in\NN_0\)
+\end{center}
+
+And usually mean to imply that this is a true statement, unless specified otherwise.
+\end{example}
+
 \section{Describing Sets}
 Sets may be described in a number of ways.
 The simplest method --- which we have used thus far --- is by simply listing out
@@ -101,8 +133,6 @@ another valid set: consider for instance \(\{A \mid A \notin A\}\), or \emph{the
 set of all sets that do not contain themselves}. Such a set cannot exist, as its
 construction inevitably leads to a paradox: should it contain itself?
 
-\section{Set Operations}
-
 \section{Commonly Used Sets}
 Commonly used sets include:
 \begin{itemize}
@@ -127,6 +157,36 @@ Each of these sets is also a \emph{proper subset} of the next, that is
 \begin{align*}
   \NN \subsetneq \ZZ \subsetneq \QQ \subsetneq \RR \subsetneq \CC
 \end{align*}
+
+\section{Set Operations}
+Much like logical statements, sets have their own associated operations.
+In the following list, let \(A, B\) be any two sets.
+\begin{itemize}
+  \ii{\textbf{Intersection:}}
+        \(A \cap B \defeq \{x \mid x \in A \land x \in B\}\)
+  \ii{\textbf{Union:}}
+        \(A \cup B \defeq \{x \mid x \in A \lor x \in B\}\)
+  \ii{\textbf{Difference:}}
+        \(A \setminus B \defeq \{x \mid x \in A \land x \notin B\}\)
+  \ii{\textbf{Symmetric Difference:}}
+        \(A \symdif B \defeq \{x \mid x \in A \xor x \in B\}\)
+  \ii{\textbf{Cartesian Product:}}
+        \(A \times B \defeq \{(x, y) \mid x \in A \land y \in B\}\)\\
+        Where \((x,y)\) is the ordered pair of two elements, one each from \(A, B\).
+\end{itemize}
+
+\begin{example}
+  [Set Operations]
+  \begin{itemize}
+    \leavevmode
+    \ii{\(\NN^* = \NN_0 \setminus \{0\}\)}
+    \ii{\(\RR \cap \ZZ = \ZZ\)}
+    \ii{\(\RR^2 = \RR \times \RR = \{(x, y) \mid x, y \in \RR\}\)}
+      \\is the set of all points in the flat plane, and more generally
+    \ii{\(\RR^{n} = \RR \times \cdots \times \RR = \{(x_{1}, \ldots, x_{n}) \mid x_{i} \in \RR\}\)}
+      \\is the set of all points in \(n\text{-dimensional}\) space.
+\end{itemize}
+\end{example}
 
 \section{\problemhead}
 \begin{problem}
