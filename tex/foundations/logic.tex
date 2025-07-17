@@ -20,12 +20,53 @@
           (but \emph{it is} a statement!).
     \ii{} ``x+1=2'' only becomes a mathematical statement when we choose a
           particular value of \(x\), or otherwise add something along the lines
-          of ``there exists a natural number x, such that''. On its own, it is
+          of ``there exists a number x, such that''. On its own, it is
           not a statement.
    \ii{} ``This statement is false'' is not a mathematical statement at all,
           since it can be neither true nor false.
   \end{itemize}
 \end{example}
+
+\begin{exercise}
+  [Statements]
+  Which of the following are \emph{mathematical statements}?
+  \begin{enumerate}
+    \ii{\(3+5=8\)}
+    \ii{\(12-2=15\)}
+    \ii{\(x+3=10\)}
+    \ii{Let \(x\) be an integer.}
+    \ii{There exists a prime number greater than \(1000\).}
+    \ii{This sentence is false.}
+    \ii{Every even number greater than \(2\) is the sum of two primes.}
+  \end{enumerate}
+
+  \begin{hint}
+    Any mathematical statement must be either definitely true or definitely
+    false. But you don't necessarily have to \emph{know} whether it is true or
+    false. There exist statements the truth of which is yet to be discovered.
+  \end{hint}
+
+  \begin{sol}
+    \begin{enumerate}
+      \ii{\(3+5=8\)} We know for a fact that this is true. So it is a statement.
+      \ii{\(12-2=15\)} We know for a fact that this is false. So it is a statement.
+      \ii{\(x+3=10\)} This is not a fully specified statement. It may be true or
+            false, depending on the value of \(x\). On its own, it is not a statement.
+      \ii{Let \(x\) be an integer.} This is a declaration or an instruction. Not a
+            statement in the mathematical sense. It has no truth value associated
+            with it.
+      \ii{There exists a prime number greater than \(1000\).} This is true. So it
+            is a statement.
+      \ii{``This sentence is false.''} This is a paradox. It cannot be
+            true, nor can it be false. Hence, it is not a valid statement.
+      \ii{Every even number greater than \(2\) is the sum of two primes.}
+            This is a statement. We do not know if it is true (it's a famous
+            unsolved problem, in fact!), but we know for a fact that it must be
+            either true or false. So it satisfies the definition of what a
+            statement is.
+    \end{enumerate}
+  \end{sol}
+\end{exercise}
 
 \section{Logical Operations}
 Once we have constructed a logical statement, we may apply operations to it.
@@ -42,9 +83,9 @@ truth tables:
     \vspace{-10pt} % reduce space above caption
     \captionof{table}{Negation \(\neg\) \\(\emph{not A})}
     \vspace{10pt}  % add space between caption and table
-    \begin{tabular}{c|c}
+    \begin{tabular}{c c}
       \(A\) & \(\neg A\) \\
-      \hline
+      \midrule
       0 & 1 \\
       1 & 0
     \end{tabular}
@@ -55,9 +96,9 @@ truth tables:
     \vspace{-10pt}
     \captionof{table}{Conjunction \(\land\) \\(\emph{A and B})}
     \vspace{3pt}
-    \begin{tabular}{cc|c}
+    \begin{tabular}{cc c}
       \(A\) & \(B\) & \(A \land B\)\\
-      \hline
+      \midrule
       0 & 0 & 0 \\
       0 & 1 & 0 \\
       1 & 0 & 0 \\
@@ -70,9 +111,9 @@ truth tables:
     \vspace{-10pt}
     \captionof{table}{Disjunction \(\lor\) \\(\emph{A or B})}
     \vspace{3pt}
-    \begin{tabular}{cc|c}
+    \begin{tabular}{cc c}
       \(A\) & \(B\) & \(A \land B\)\\
-      \hline
+      \midrule
       0 & 0 & 0 \\
       0 & 1 & 1 \\
       1 & 0 & 1 \\
@@ -99,9 +140,9 @@ operations
     \vspace{-10pt}
     \captionof{table}{Implication \(\Rightarrow\) \\(\emph{if A then B})}
     \vspace{3pt}
-    \begin{tabular}{cc|c}
+    \begin{tabular}{cc c}
       \(A\) & \(B\) & \(A \Rightarrow B\)\\
-      \hline
+      \midrule
       0 & 0 & 1 \\
       0 & 1 & 1 \\
       1 & 0 & 0 \\
@@ -115,9 +156,9 @@ operations
     \captionof{table}{Equivalence \(\Leftrightarrow\) \\
       (\emph{A is equivalent to B})}
     \vspace{3pt}
-    \begin{tabular}{cc|c}
+    \begin{tabular}{cc c}
       \(A\) & \(B\) & \(A \Leftrightarrow B\)\\
-      \hline
+      \midrule
       0 & 0 & 1 \\
       0 & 1 & 0 \\
       1 & 0 & 0 \\
@@ -146,9 +187,9 @@ based:
     \vspace{-10pt}
     \captionof{table}{Exclusive or \(\xor\) \\(\emph{either A or B})}
     \vspace{3pt}
-    \begin{tabular}{cc|c}
+    \begin{tabular}{cc c}
       \(A\) & \(B\) & \(A \xor B\)\\
-      \hline
+      \midrule
       0 & 0 & 0 \\
       0 & 1 & 1 \\
       1 & 0 & 1 \\
@@ -157,7 +198,6 @@ based:
   \end{minipage}
 \end{tcolorbox}
 }
-
 
 \subsection{Compound Statements}
 We may freely combine logical statements using any of these operations, always
@@ -186,6 +226,17 @@ is often done for simplicity. However, just like with arithmetic operations
   \ii{} Equivalence \(\Leftrightarrow\)
 \end{itemize}
 
+\begin{exercise}
+  [Logical Operator Precedence]
+  Using parentheses, make the order of operations explicit, without changing the
+  meaning of the statement.\\
+  \(\neg A \lor B \land C \Rightarrow D\)
+
+  \begin{sol}
+    \(((\neg A) \lor (B \land C)) \Rightarrow D\)
+  \end{sol}
+\end{exercise}
+
 \begin{example}
   [Signifying the precedence of logical operators]
   Consider the compound logical statement:\\
@@ -198,6 +249,24 @@ is often done for simplicity. However, just like with arithmetic operations
   \(B \land C\), then the logical or combining both.
 \end{example}
 
+\begin{exercise}
+  [Logically Evaluating Statements]
+  Let \(A=0, B=1, C=1\). Evaluate the following statement:\\
+  \begin{center}
+    \((\neg A \lor B) \Leftrightarrow (B \land C)\)
+  \end{center}
+
+  \begin{sol}
+    \begin{align*}
+      (\neg A \lor B) &\Leftrightarrow (B \land C)\\
+      (\neg 0 \lor 1) &\Leftrightarrow (1 \land 1)\\
+      (1 \lor 1) &\Leftrightarrow (1)\\
+      1 &\Leftrightarrow 1\\
+      &\ \, 1
+    \end{align*}
+  \end{sol}
+\end{exercise}
+
 \section{Tautologies}
 
 We can, using these methods, construct statements that are always true.
@@ -209,123 +278,7 @@ We call statements that are always true by nature \emph{tautologies} and
 those that are always false \emph{contradictions}. They are denoted by the
 symbols \(\top\) and \(\bot\), respectively.
 
-
-% TODO: Most of these should probably be questions or exercises, not problems.
-\section{\problemhead}
-\begin{problem}
-  [Statements]
-  Which of the following are \emph{mathematical statements}?
-  \begin{enumerate}
-    \ii{\(3+5=8\)}
-    \ii{\(12-2=15\)}
-    \ii{\(x+3=10\)}
-    \ii{Let \(x\) be an integer.}
-    \ii{There exists a prime number greater than \(1000\).}
-    \ii{This sentence is false.}
-    \ii{Every even number greater than \(2\) is the sum of two primes.}
-  \end{enumerate}
-
-  \begin{hint}
-    Any mathematical statement must be either definitely true or definitely
-    false. But you don't necessarily have to \emph{know} whether it is true or
-    false. There exist statements the truth of which is yet to be discovered.
-  \end{hint}
-
-  \begin{sol}
-  \begin{enumerate}
-    \ii{\(3+5=8\)} We know for a fact that this is true. So it is a statement.
-    \ii{\(12-2=15\)} We know for a fact that this is false. So it is a statement.
-    \ii{\(x+3=10\)} This is not a fully specified statement. It may be true or
-          false, depending on the value of \(x\). On its own, it is not a statement.
-    \ii{Let \(x\) be an integer.} This is a declaration or an instruction. Not a
-          statement in the mathematical sense. It has no truth value associated
-          with it.
-    \ii{There exists a prime number greater than \(1000\).} This is true. So it
-          is a statement.
-    \ii{This sentence is false.} This sentence is paradoxical. It cannot be
-          true, nor can it be false. Hence, it is not a valid statement.
-    \ii{Every even number greater than \(2\) is the sum of two primes.}
-          This is a statement. We do not know if it is true (it's a famous
-          unsolved problem, in fact!), but we know for a fact that it must be
-          either true or false. So it satisfies the definition of what a
-          statement is.
-  \end{enumerate}
-  \end{sol}
-\end{problem}
-
-\begin{problem}
-  [Truth tables]
-  Construct the truth-table for the following statement:\\
-  \begin{center}
-    \(A \Rightarrow (B \lor \neg C)\)
-  \end{center}
-
-  \begin{hint}
-    First compute the truth tables for the intermediate values of \(\neg C\) and
-    \(B \lor \neg C\).
-  \end{hint}
-
-  \begin{sol}
-    \begin{tabular}{ccc|cc|c}
-      \(A\) & \(B\) & \(C\) & \(\neg C\) & \(B \lor \neg C\) &
-      \(A \Rightarrow (B \lor \neg C)\)\\
-      \hline
-      0 & 0 & 0 & 1 & 1 & 1\\
-      0 & 0 & 1 & 0 & 0 & 1\\
-      0 & 1 & 0 & 1 & 1 & 1\\
-      0 & 1 & 1 & 0 & 1 & 1\\
-      1 & 0 & 0 & 1 & 1 & 1\\
-      1 & 0 & 1 & 0 & 0 & 0\\
-      1 & 1 & 0 & 1 & 1 & 1\\
-      1 & 1 & 1 & 0 & 1 & 1\\
-    \end{tabular}
-  \end{sol}
-\end{problem}
-
-\begin{problem}
-  [Logical Operator Precedence]
-  Using parentheses, make the order of operations explicit, without changing the
-  meaning of the statement.\\
-  \(\neg A \lor B \land C \Rightarrow D\)
-
-  \begin{hint}
-    \begin{itemize}
-      \ii{} Negation \(\neg\) is evaluated first, followed by
-      \ii{} Conjunction \(\land\)
-      \ii{} Disjunction \(\lor\)
-      \ii{} Implication \(\Rightarrow\) and
-      \ii{} Equivalence \(\Leftrightarrow\)
-    \end{itemize}
-  \end{hint}
-
-  \begin{sol}
-    \(((\neg A) \lor (B \land C)) \Rightarrow D\)
-  \end{sol}
-\end{problem}
-
-\begin{problem}
-  [Logically Evaluating Statements]
-  Let \(A=0, B=1\). Evaluate the following statement:\\
-  \begin{center}
-    \((\neg A \lor B) \Leftrightarrow (B \land \top)\)
-  \end{center}
-
-  \begin{hint}
-    Evaluate both sides of the equivalence first, then apply the equivalence relation.
-  \end{hint}
-
-  \begin{sol}
-    \begin{align*}
-      (\neg A \lor B) &\Leftrightarrow (B \land \top)\\
-      (\neg 0 \lor 1) &\Leftrightarrow (1 \land 1)\\
-      (1 \lor 1) &\Leftrightarrow (1)\\
-      1 &\Leftrightarrow 1\\
-      &\ \, 1
-    \end{align*}
-  \end{sol}
-\end{problem}
-
-\begin{problem}
+\begin{exercise}
   [Tautology and Contradiction]
   Are the following statements a tautology, a contradiction or neither?
   Can any statement be both?\\
@@ -339,5 +292,36 @@ symbols \(\top\) and \(\bot\), respectively.
     No statement can be both tautology and contradiction, since that would
     require it to be true and false simultaneously. This would contradict our
     definition of what a logical statement is.
+  \end{sol}
+\end{exercise}
+
+% TODO: Most of these should probably be questions or exercises, not problems.
+\section{\problemhead}
+\begin{problem}
+  [Truth tables]
+  Construct the truth-table for the following statement:\\
+  \begin{center}
+    \(A \Rightarrow (B \lor \neg C)\)
+  \end{center}
+
+  \begin{hint}
+    First compute the truth tables for the intermediate values of \(\neg C\) and
+    \(B \lor \neg C\) in their own columns.
+  \end{hint}
+
+  \begin{sol}
+    \begin{tabular}{ccc cc c}
+      \(A\) & \(B\) & \(C\) & \(\neg C\) & \(B \lor \neg C\) &
+      \(A \Rightarrow (B \lor \neg C)\)\\
+      \midrule
+      0 & 0 & 0 & 1 & 1 & 1\\
+      0 & 0 & 1 & 0 & 0 & 1\\
+      0 & 1 & 0 & 1 & 1 & 1\\
+      0 & 1 & 1 & 0 & 1 & 1\\
+      1 & 0 & 0 & 1 & 1 & 1\\
+      1 & 0 & 1 & 0 & 0 & 0\\
+      1 & 1 & 0 & 1 & 1 & 1\\
+      1 & 1 & 1 & 0 & 1 & 1\\
+    \end{tabular}
   \end{sol}
 \end{problem}
