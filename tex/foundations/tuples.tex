@@ -1,0 +1,101 @@
+\chapter{Tuples}\label{ch:tuples}
+\section{Definition}
+\begin{definition}
+  A tuple is an ordered list of finitely many objects.
+  We write tuples surrounded by parentheses, with each element
+  separated from the others by a comma.
+  A tuple containing \(n\) elements is called an \(n\text{-tuple}\).
+  \(2\text{-tuples}\) are sometimes referred to as \emph{pairs}.
+\end{definition}
+\begin{example}
+  [A tuple]
+  For example: \((3, 2, 2, 1)\) is the tuple
+  containing the numbers three, two, another copy of two,
+  and one, in that specific order.
+\end{example}
+
+\section{Key Properties}
+\begin{itemize}
+  \ii{\textbf{Ordered:}} unlike sets, tuples are ordered. That is,
+      \((1,2,3)\neq (3,2,1)\),
+  because their elements appear in a different order.
+  \ii{\textbf{Duplicates:}} tuples may contain elements more than once.
+  That is, \((1,2,3) \neq (1,2,2,3,3,3)\), because they contain the same
+  elements, but differ in \emph{how often} they occur.
+  \ii{\textbf{Finite:}} unlike sets, tuples are always finite.
+  They cannot contain an infinite number of elements.
+\end{itemize}
+
+\section{Tuple Comparison}
+Two tuples \emph{of the same length} may be compared to each other using
+\(=, \neq, <, \leq, >, \geq\).
+Let \(a = (a_{0}, a_{1}, \dots, a_{n-1}), b = (b_{0}, b_{1}, \dots, b_{n-1})\) be
+two tuples of length \(n\). We compare them using the following rules:
+
+\subsection*{Equality}
+\begin{itemize}
+  \ii{\(a = b\):} if and only if \(\forall i \in \{0, 1, \dots, n-1\}: a_{i} = b_{i}\)
+  \ii{\(a \neq b\):} if and only if \(\exists i \in \{0, 1, \dots, n-1\}: a_{i} \neq b_{i}\)
+\end{itemize}
+
+\subsection*{Lexicographic Ordering}
+\begin{itemize}
+  \ii{\(a < b\):} if and only if
+        \(\exists k \in \{0, 1, \dots, n-1\}: \forall i < k: a_{i} = b_{i} \land a_{k} < b_{k}\)
+  \ii{\(a \leq b\):} if and only if \(a < b \lor a = b\)
+  \ii{\(a > b\):} if and only if
+        \(\exists k \in \{0, 1, \dots, n-1\}: \forall i < k: a_{i} = b_{i} \land a_{k} > b_{k}\)
+  \ii{\(a \geq b\):} if and only if \(a > b \lor a = b\)
+\end{itemize}
+
+This is called \emph{lexicographic} ordering, because it is precisely how a
+lexicon (or a dictionary) orders words of the same length. Those with the
+smaller initial letter are grouped first, then within that group we sort by the
+second letter, and so on.
+
+\begin{example}
+  \begin{itemize}
+    \leavevmode
+    \ii{\((1,2,3) < (1,3,2)\)} because \(2 < 3\)
+    \ii{\((1,2,3) \geq (1,2,3)\)} because they are equal.
+    \ii{\((1,2,3) \neq (4,3,2,1)\)} are not equal, because they differ in
+          length. We may not state that one is lesser or greater than the
+          other, since they cannot be compared lexicographically.
+  \end{itemize}
+\end{example}
+
+
+\section{Tuple Operations}
+Much like logical statements, sets have their own associated operations.
+In the following list, let \(A, B\) be any two sets.
+\begin{itemize}
+  \ii{\textbf{Element Access:}}
+        \(t[n]\) refers to the \(n\text{-th}\) element of the tuple \(t\).
+        We begin indexing elements at \(0\).
+        For instance, \((1,2,3)[0] = 1\).
+        \begin{remark}
+          This is common notation in computer science, hence what we will use for
+          purposes of this book. In mathematics, tuples are often indexed starting
+          at \(1\) and element access is written is \(t_{n}\) or \(\pi_{n}(t)\).
+        \end{remark}
+  \ii{\textbf{Concatenation:}}
+        \(t \circ u\) is the tuple which contains all elements of \(t\),
+        followed by all elements of \(u\), where \(t,u\) are tuples.
+  \ii{\textbf{Slicing:}}
+        \(t[n:m] \mid m > n\) refers to the sub-tuple of length \(m-n\)
+        containing all elements from the \(n\text{-th}\) up to the \(m\text{-th}\)
+        element of \(t\), where the \(n\text{-th}\) element is included and the
+        \(m\text{-th}\) element is not.
+\end{itemize}
+
+\begin{example}
+  [Tuple Operations]
+  \begin{itemize}
+    \leavevmode
+    \ii{\((8,12,82,-3,1)[2] = 82\)}
+    \ii{\((1,2,3)\circ (4,5,6) = (1,2,3,4,5,6)\)}
+    \ii{\((1,2,3,4,5,6)[2:5] = (3,4,5)\)}
+\end{itemize}
+\end{example}
+
+% TODO: Add exercises and problems
