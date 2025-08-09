@@ -1,0 +1,110 @@
+\chapter{Relations and Functions}\label{ch:functions}
+\section{Relations}
+
+\begin{definition}
+  A (binary) relation \(R\) between two sets \(A, B\) is the 3-tuple of those
+  two sets and any subset of their Cartesian product:
+  \begin{align*}
+    R \defeq (A, B, R') & \text{where} & R' \subseteq A \times B
+  \end{align*}
+  Which means that a relation between two sets is specified by those two sets
+  and a set of pairs, in which the first element of each pair is from one set
+  and the second element of each pair is from the other.
+
+  The set \(A\) is then called the \emph{domain} of \(R\), and \(B\) is called
+  its \emph{codomain}.
+\end{definition}
+
+A relation \emph{relates} objects from one set to objects from another (or possibly the same) set.
+
+To express that a given pair is in such a relation, we may use
+any of the following notations:
+\begin{center}
+\begin{tabular}{c c}
+  \((a, b) \in R\) & \text{explicit set notation}\\
+  \(R(a,b)\) & \text{prefix notation}\\
+  \(a R b\) & \text{infix notation}
+\end{tabular}
+\end{center}
+
+\begin{example}
+  [Example of a relation]
+  Let \(A=\NN, B=\NN\).
+  Then \(<\) defines a relation from \(A\) to \(B\).\\
+  For instance, \((1, 2) \in <\), or as this is more commonly denoted:
+  \(1 < 2\). \\
+  However, \((1, 0) \notin <\), meaning \( 1 \not< 0\).
+\end{example}
+
+\subsection{Uniqueness Properties}
+
+A relation is called \emph{left-unique} if every element in its domain
+is related to \emph{at most one} element of its codomain.
+Similarly, a relation is called \emph{right-unique} if every element in the
+codomain is related to \emph{at most one} element in the domain.
+
+\subsection{Totality Properties}
+
+A relation is called \emph{left-total} if every element in its domain
+is related to \emph{at least one} element of its codomain.
+Again, the term \emph{right-unique} is used to describe the same idea
+the other way around: every element of the codomain of a right-unique relation
+is related to \emph{at least one} element of its domain.
+
+\begin{tikzpicture}
+
+% Y coordinates for 3 points each side
+\def\domainY{1.5,0,-1.5}
+\def\codomainY{1.5,0,-1.5}
+
+% 1. Left-total + Right-unique (e.g., function)
+\ovalrelation{0cm}{0cm}
+  {1.5,0,-1.5}
+  {1.5,0,-1.5}
+  {1/1,2/2,3/3}
+
+% 2. Left-unique only
+\ovalrelation{7cm}{0cm}
+  {1.5,0,-1.5}
+  {1.5,0,-1.5}
+  {1/1,2/2}
+
+% 3. No properties
+\ovalrelation{0cm}{-5cm}
+  {1.5,0,-1.5}
+  {1.5,0,-1.5}
+  {1/1,1/2,2/1}
+
+% 4. Function but not RT (some codomain unused)
+\ovalrelation{7cm}{-5cm}
+  {1.5,0,-1.5}
+  {1.5,0,-1.5}
+  {1/1,2/2,3/2}
+
+% 5. RT + LU only
+\ovalrelation{0cm}{-10cm}
+  {1.5,0,-1.5}
+  {1.5,0,-1.5}
+  {1/1,2/2,2/3}
+
+\end{tikzpicture}
+
+\section{Functions}
+
+\begin{definition}
+  A \emph{function} is a relation that is right-unique and left-total.
+  We usually denote this as
+  \begin{align*}
+    f \colon A \to B
+  \end{align*}
+  meaning \emph{``Let \(f\) be a function from \(A\) to \(B\)''}.
+  This means that a function assigns each \(a \in A\) \emph{exactly one}
+  \(b \in B\), though it may repeatedly assign the same elements of \(B\),
+  or not assign some elements from \(B\) to any elements in \(A\) at all.
+\end{definition}
+
+\begin{definition}
+  A function is called \emph{injective} if it is also left-unique.\\
+  A function is called \emph{surjective} if it is also right-total.\\
+  A function is called \emph{bijective} if it is both injective and surjective.
+\end{definition}

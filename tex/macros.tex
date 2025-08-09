@@ -67,7 +67,7 @@
 \DeclareMathOperator{\diam}{diam}
 \DeclareMathOperator{\ord}{ord}
 %\newcommand{\defeq}{\overset{\mathrm{def}}{=}}
-\newcommand{\defeq}{\coloneqq}
+\newcommand{\defeq}{\coloneq}
 
 %From the USAMO .tex files
 \newcommand{\st}{^{\text{st}}}
@@ -284,3 +284,29 @@
 \newcommand{\onechili}{\marginpar{\prechili\chili}}
 \newcommand{\twochili}{\marginpar{\prechili\chili\chili}}
 \newcommand{\threechili}{\marginpar{\prechili\chili\chili\chili}}
+
+%% Relations
+\newcommand{\ovalrelation}[5]{%
+  \begin{scope}[xshift=#1, yshift=#2]
+    % Draw ovals
+    \node[draw, color=black!0, fill=blue!20, ellipse, minimum width=1.6cm, minimum height=4cm] (D) at (0,0) {};
+    \node[draw, color=black!0, fill=red!20, ellipse, minimum width=1.6cm, minimum height=4cm] (C) at (4,0) {};
+
+    % Domain points
+    \foreach \y [count=\i] in {#3} {
+      \node[circle, fill=gray!50, inner sep=2pt] (d\i) at (0,\y) {};
+    }
+
+    % Codomain points
+    \foreach \y [count=\i] in {#4} {
+      \node[circle, fill=gray!50, inner sep=2pt] (c\i) at (4,\y) {};
+    }
+
+    % Arrows and coloring
+    \foreach \d/\c in {#5} {
+      \draw[-{Latex[width=1.2mm]}, thick] (d\d) -- (c\c);
+      \node at (d\d) [circle, fill=blue!70, inner sep=2pt] {};
+      \node at (c\c) [circle, fill=red!70, inner sep=2pt] {};
+    }
+  \end{scope}
+}

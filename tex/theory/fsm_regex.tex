@@ -3,8 +3,8 @@
 
 \begin{center}
   \begin{tikzpicture}
-    \node[state, initial] (q0) {\(q_0\)};
-    \node[state, accepting, right of=q0] (q1) {\(q_1\)};
+    \node[state, initial] (q0) {\(q_{0}\)};
+    \node[state, accepting, right of=q0] (q1) {\(q_{1}\)};
 
     \path
       (q0) edge[bend left, above] node{a} (q1)
@@ -14,12 +14,12 @@
 
 \begin{tikzpicture}
   % States
-  \node[state, initial] (q0) {\(q_0\)};
-  \node[state, accepting, initial, right of=q0, xshift=3cm] (q1) {\(q_1\)};
-  \node[state, below right of=q0] (q2) {\(q_2\)};
-  \node[state, right of=q2] (q3) {\(q_3\)};
-  \node[state, accepting, below of=q3] (q4) {\(q_4\)};
-  \node[state, accepting, right of=q3, xshift=2cm] (q5) {\(q_5\)};
+  \node[state, initial] (q0) {\(q_{0}\)};
+  \node[state, accepting, initial, right of=q0, xshift=3cm] (q1) {\(q_{1}\)};
+  \node[state, below right of=q0] (q2) {\(q_{2}\)};
+  \node[state, right of=q2] (q3) {\(q_{3}\)};
+  \node[state, accepting, below of=q3] (q4) {\(q_{4}\)};
+  \node[state, accepting, right of=q3, xshift=2cm] (q5) {\(q_{5}\)};
 
   % Transitions
   \path

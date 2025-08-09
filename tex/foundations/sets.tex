@@ -64,6 +64,15 @@ If \(A\) is a set, then the set of all subsets of \(A\) is called its
   \end{itemize}
 \end{example}
 
+\begin{exercise}
+  Specify, by writing out all their members in curly braces, the following sets:
+  \begin{itemize}
+    \ii{\(\PP(\{-3, 15\})\)}
+    \ii{\(\PP(\{1\})\)}
+    \ii{\(\PP(\emptyset)\)}
+  \end{itemize}
+\end{exercise}
+
 \section{Quantifiers}
 
 Often times, we would want to express a statement that holds \emph{for every
@@ -80,7 +89,7 @@ Or perhaps, we might want to state that a statement is true only for
     \begin{tabular}{cc}
       \(\forall\) & ``for all''\\
       \(\exists\) & ``there exists at least one (but possibly many)''\\
-      \(\exists!\) & ``there exists \emph{exactly} one''
+      \(\exists\mathpunct{!}\) & ``there exists \emph{exactly} one''
     \end{tabular}
   \end{minipage}
 \end{tcolorbox}
@@ -163,30 +172,46 @@ Much like logical statements, sets have their own associated operations.
 In the following list, let \(A, B\) be any two sets.
 \begin{itemize}
   \ii{\textbf{Intersection:}}
-        \(A \cap B \defeq \{x \mid x \in A \land x \in B\}\)
+        \(A \cap B \defeq \{x \mid x \in A \land x \in B\}\) describes the set of all
+        elements that are in \emph{both \(A\) and \(B\)}.
   \ii{\textbf{Union:}}
-        \(A \cup B \defeq \{x \mid x \in A \lor x \in B\}\)
+        \(A \cup B \defeq \{x \mid x \in A \lor x \in B\}\) describes the set of all
+        elements that are in \emph{\(A\) or \(B\)} (or in both).
   \ii{\textbf{Difference:}}
-        \(A \setminus B \defeq \{x \mid x \in A \land x \notin B\}\)
+        \(A \setminus B \defeq \{x \mid x \in A \land x \notin B\}\) often called \emph{``set
+        minus''}, describes the set of all elements that are in \(A\), but
+        \emph{not in \(B\)}.
   \ii{\textbf{Symmetric Difference:}}
-        \(A \symdif B \defeq \{x \mid x \in A \xor x \in B\}\)
+        \(A \symdif B \defeq \{x \mid x \in A \xor x \in B\}\) the set of all elements in
+        \emph{exactly one of} \(A, B\).
   \ii{\textbf{Cartesian Product:}}
         \(A \times B \defeq \{(x, y) \mid x \in A \land y \in B\}\)\\
         Where \((x,y)\) is the \emph{ordered pair} of two elements, one each from \(A, B\).
         We will specify what an \emph{ordered pair} is in \Cref{ch:tuples}.
+        To specify the Cartesian product of a set with itself, we use \(A^{2}\), or when
+        repeating this operation \(n\) times, \(A^{n}\).
 \end{itemize}
+
+\begin{exercise}
+  Specify, by writing out all their members in curly braces, the following sets:
+  \begin{itemize}
+    \ii{\(\{0,1,2,3,4,5\} \cap \{-5,-4,-3,-2,-1,0\}\)}
+    \ii{\(\{0,1,2,3,4,5\} \cup \{-5,-4,-3,-2,-1,0\}\)}
+    \ii{\(\{0,1,2,3,4,5\} \setminus \{-5,-4,-3,-2,-1,0\}\)}
+    \ii{\(\{0,1,2,3,4,5\} \symdif \{-5,-4,-3,-2,-1,0\}\)}
+    \ii{\(\{1,2,3\} \times \{x,y,z\}\)}
+  \end{itemize}
+\end{exercise}
 
 \begin{example}
   [Set Operations]
   \begin{itemize}
     \leavevmode
-    \ii{\(\NN^* = \NN_0 \setminus \{0\}\)}
+    \ii{\(\NN^{*} = \NN_{0} \setminus \{0\}\)}
     \ii{\(\RR \cap \ZZ = \ZZ\)}
-    \ii{\(\RR^2 = \RR \times \RR = \{(x, y) \mid x, y \in \RR\}\)}
+    \ii{\(\RR^{2} = \RR \times \RR = \{(x, y) \mid x, y \in \RR\}\)}
       \\is the set of all points in the flat plane, and more generally
     \ii{\(\RR^{n} = \RR \times \cdots \times \RR = \{(x_{1}, \ldots, x_{n}) \mid x_{i} \in \RR\}\)}
       \\is the set of all points in \(n\text{-dimensional}\) space.
 \end{itemize}
 \end{example}
-
-% TODO: Add exercises and problems
