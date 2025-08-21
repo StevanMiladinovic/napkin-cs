@@ -1,0 +1,46 @@
+\chapter{Graphs}\label{ch:graphs}
+\section{Definition of a Graph}
+
+\begin{definition}
+  A graph \(G=(V, E)\) is a 2-tuple\ref{ch:tuples} of two sets, of which
+  \(V\) is the finite set of \emph{vertices} and \(E\) is a set of \emph{edges}
+  between two vertices, which are sets containing exactly two vertices.
+\end{definition}
+
+\begin{example}
+  [Example of a graph in two representations]
+  Let \(V=\{0,1,2\}, E=\{\{0,1\}, \{1,2\}\}, G=(V, E)\)
+
+  This graph can be visually represented as follows:
+  \linebreak
+  \begin{center}
+    \begin{tikzpicture}[
+      -,
+      every edge/.append style={-}
+    ]
+      \node[state] (0) at (0,0) {0};
+      \node[state] (1) at (2,0) {1};
+      \node[state] (2) at (1,-2) {2};
+
+      \draw (0) -- (1);
+      \draw (1) -- (2);
+    \end{tikzpicture}
+  \end{center}
+\end{example}
+
+\section{Labeled Graphs}
+
+\section{Directed Graphs}
+
+\section{Degrees}
+\subsection{In- and Out-Degrees}
+
+\section{Sub-Graphs}
+
+\section{Paths, Trees}
+\subsection{Connected and Strongly Connected}
+\subsection{Simple Paths}
+\subsection{Cycles}
+
+
+\section{\problemhead}
