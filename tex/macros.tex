@@ -286,7 +286,7 @@
 \newcommand{\threechili}{\marginpar{\prechili\chili\chili\chili}}
 
 %% Relations
-\newcommand{\ovalrelation}[5]{%
+\newcommand{\ovalrelation}[6]{%
   \begin{scope}[xshift=#1, yshift=#2]
     % Draw ovals
     \node[draw, color=black!0, fill=blue!20, ellipse, minimum width=1.6cm, minimum height=4cm] (D) at (0,0) {};
@@ -308,5 +308,8 @@
       \node at (d\d) [circle, fill=blue!70, inner sep=2pt] {};
       \node at (c\c) [circle, fill=red!70, inner sep=2pt] {};
     }
+
+    % Label
+    \node[below=2cm of $(D)!0.5!(C)$] {#6};
   \end{scope}
 }

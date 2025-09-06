@@ -47,47 +47,9 @@ codomain is related to \emph{at most one} element in the domain.
 
 A relation is called \emph{left-total} if every element in its domain
 is related to \emph{at least one} element of its codomain.
-Again, the term \emph{right-unique} is used to describe the same idea
-the other way around: every element of the codomain of a right-unique relation
+Again, the term \emph{right-total} is used to describe the same idea
+the other way around: every element of the codomain of a right-total relation
 is related to \emph{at least one} element of its domain.
-
-\begin{tikzpicture}
-
-% Y coordinates for 3 points each side
-\def\domainY{1.5,0,-1.5}
-\def\codomainY{1.5,0,-1.5}
-
-% 1. Left-total + Right-unique (e.g., function)
-\ovalrelation{0cm}{0cm}
-  {1.5,0,-1.5}
-  {1.5,0,-1.5}
-  {1/1,2/2,3/3}
-
-% 2. Left-unique only
-\ovalrelation{7cm}{0cm}
-  {1.5,0,-1.5}
-  {1.5,0,-1.5}
-  {1/1,2/2}
-
-% 3. No properties
-\ovalrelation{0cm}{-5cm}
-  {1.5,0,-1.5}
-  {1.5,0,-1.5}
-  {1/1,1/2,2/1}
-
-% 4. Function but not RT (some codomain unused)
-\ovalrelation{7cm}{-5cm}
-  {1.5,0,-1.5}
-  {1.5,0,-1.5}
-  {1/1,2/2,3/2}
-
-% 5. RT + LU only
-\ovalrelation{0cm}{-10cm}
-  {1.5,0,-1.5}
-  {1.5,0,-1.5}
-  {1/1,2/2,2/3}
-
-\end{tikzpicture}
 
 \section{Functions}
 
@@ -98,13 +60,66 @@ is related to \emph{at least one} element of its domain.
     f \colon A \to B
   \end{align*}
   meaning \emph{``Let \(f\) be a function from \(A\) to \(B\)''}.
-  This means that a function assigns each \(a \in A\) \emph{exactly one}
+  This means that \(f\) assigns each \(a \in A\) \emph{exactly one}
   \(b \in B\), though it may repeatedly assign the same elements of \(B\),
   or not assign some elements from \(B\) to any elements in \(A\) at all.
 \end{definition}
 
 \begin{definition}
-  A function is called \emph{injective} if it is also left-unique.\\
-  A function is called \emph{surjective} if it is also right-total.\\
-  A function is called \emph{bijective} if it is both injective and surjective.
+  A function is called \emph{injective} if it is also left-unique, meaning it
+  only assigns each element of the codomain \textit{at most once}.\\
+  A function is called \emph{surjective} if it is also right-total, meaning it
+  assigns each element of the codomain \textit{at least once}.\\
+  A function is called \emph{bijective}, or \textit{one-to-one},
+  if it is both injective and surjective.
 \end{definition}
+
+\begin{tikzpicture}
+
+% Y coordinates for 3 points each side
+\def\domainY{1.5,0,-1.5}
+\def\codomainY{1.5,0,-1.5}
+
+\ovalrelation{0cm}{0cm}
+  {1.5,0,-1.5}
+  {1.5,0,-1.5}
+  {1/1,2/2}
+  {A \textit{left-unique}, \textit{right-unique} relation}
+
+\ovalrelation{7cm}{0cm}
+  {1.5,0,-1.5}
+  {1.5,0,-1.5}
+  {1/1,1/2}
+  {A \textit{left-unique} relation}
+
+\ovalrelation{0cm}{-6cm}
+  {1.5,0,-1.5}
+  {1.5,0,-1.5}
+  {1/1,2/2,2/3}
+  {A \textit{left-unique}, \textit{right-total} relation}
+
+\ovalrelation{7cm}{-6cm}
+  {1.5,0,-1.5}
+  {1.5,0,-1.5}
+  {1/1,2/2,3/2}
+  {\shortstack{A \textit{function} \\ (which is not injective or surjective)}}
+
+\ovalrelation{0cm}{-12cm}
+  {1.5,0,-1.5}
+  {1.5,0,-1.5}
+  {1/1,2/2,3/1}
+  {An \textit{injective} function}
+
+\ovalrelation{7cm}{-12cm}
+  {1.5,0,-1.5}
+  {1.5,0,-1.5}
+  {1/1,2/1,3/2}
+  {A \textit{surjective} function}
+
+\ovalrelation{3.5cm}{-18cm}
+  {1.5,0,-1.5}
+  {1.5,0,-1.5}
+  {1/1,2/2,3/3}
+  {A \textit{bijective} function}
+
+\end{tikzpicture}
